@@ -29,7 +29,6 @@ export {
     updateState,
     comment,
     searchGoodsType,
-    postMessageURL,
     postSearchPro,
     postSearchCom
 

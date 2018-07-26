@@ -6,13 +6,13 @@ import {
 
 import axios from 'axios';
 
-class AccountManager {
+class UserManager {
 
-    async register(email,password){
+    async register(Phone,Pwd){
         try {
             const res = await axios.post(registerURL,{
-                email,
-                password
+                Phone,
+                Pwd
             });
             const result = res.data;
             if (result.success === true) {
@@ -48,24 +48,24 @@ class AccountManager {
         
     }
 
-    async changePassword(old_password,new_password){
-        try {
-            const access_token = localStorage.access_token;
-            const res = await axios.post(changePasswordURL,{
-                access_token,
-                old_password,
-                new_password
-            });
-            const result = res.data;
-            return result;
-        } catch (error) {
-            return {
-                success:false,
-                errorMessage:'网络错误'
-            }
-        }
+    // async changePassword(old_password,new_password){
+    //     try {
+    //         const access_token = localStorage.access_token;
+    //         const res = await axios.post(changePasswordURL,{
+    //             access_token,
+    //             old_password,
+    //             new_password
+    //         });
+    //         const result = res.data;
+    //         return result;
+    //     } catch (error) {
+    //         return {
+    //             success:false,
+    //             errorMessage:'网络错误'
+    //         }
+    //     }
         
-    }
+    // }
 
     isLogin(){
         if(localStorage.access_token === '' || !localStorage.access_token){
@@ -81,4 +81,4 @@ class AccountManager {
 
 }
 
-export default new AccountManager();
+export default new UserManager();

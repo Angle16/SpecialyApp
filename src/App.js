@@ -10,7 +10,7 @@ import {
 
 import { Button } from 'antd-mobile';
 
-import AScreen from './Screen/AScreen';
+import RegisterScreen from './Screen/RegisterScreen';
 import BScreen from './Screen/BScreen';
 
 class App extends Component {
@@ -26,7 +26,7 @@ class App extends Component {
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
           <Button>Click</Button>
-          <Route path={'/a'} component={AScreen} />
+          <Route path={'/RegisterScreen'} component={RegisterScreen} />
           <Route path={'/b'} component={BScreen} />
         </div>
       </DocumentTitle>
